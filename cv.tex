@@ -1,0 +1,275 @@
+% Adapted from template.tex provided with moderncv
+% NOTE: Check back there for interesting/useful formatting tools.
+
+\documentclass[11pt,letterpaper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{burgundy}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%%%%%%
+% Fix issue of Gitlab favicon not showing up
+% https://tex.stackexchange.com/a/559417
+\usepackage{fontawesome}
+\providecommand*{\gitlabsocialsymbol}{}
+\renewcommand*{\gitlabsocialsymbol}{{\scriptsize\faGitlab}~}
+%%%%%%
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\setlength{\hintscolumnwidth}{2.27cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Bryant}{Curto}
+\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+%\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\homepage{www.bryantcurto.com}                         % optional, remove / comment the line if not wanted
+\email{bcurto@uwaterloo.ca}                               % optional, remove / comment the line if not wanted
+\phone[mobile]{+1~(437)~987-6897}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% Social icons
+\social[linkedin][www.linkedin.com/in/bryant-curto-216907134/]{bryant-curto}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+\social[github]{bryantcurto}                              % optional, remove / comment the line if not wanted
+\social[gitlab][gitlab.uwaterloo.ca/bcurto]{bcurto}                              % optional, remove / comment the line if not wanted
+%\social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
+%\social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
+%\social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+
+
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2020--present}{MS Computer Science}{University of Waterloo (UW)}{Waterloo, ON}{}{
+Supervisor: Martin Karsten\newline
+95.75/100.00 GPA}  % arguments 3 to 6 can be left empty
+\cventry{2014--2018}{BA Computer Science with Honors \& BA Mathematics}{New York University (NYU)}{New York, NY}{}{
+3.92/4.00 GPA, Summa Cum Laude, Phi Beta Kappa}
+
+%\section{Master Thesis}
+%\cvitem{title}{\emph{Title}}
+%\cvitem{supervisors}{Supervisors}
+%\cvitem{description}{Short thesis abstract}
+
+\section{Research Experience}
+\cventry{2020--present}{UW Research Assistant}{Advisor: Martin Karsten}{Waterloo, ON}{}{
+Devise, implement, and evaluate methods for improving cache locality and utilization in thread-per-session applications using Fred/Libfibre, a user-level M:N threading runtime.
+\newline}
+\cventry{2017--2018}{NYU Senior Honors Thesis}{Advisor: Christopher Mitchell}{New York, NY}{}{
+Project Title: Ghosting ASLR: A Spectre Extension\newline
+Designed, implemented, and evaluated a novel approach for defeating address space layout randomization by leveraging the Spectre microprocessor vulnerability.
+Won best presentation award at NYU College of Arts and Science 44th Undergraduate Research Conference.
+%Modern  computer  processors  implement  optimizations known as branch prediction and speculative execution.
+%If a processor is waiting to retrieve a value from memory to determine  which  branch  of  code  to  execute,  these  features  enable the processor to predict the code path and begin executing.
+%The hope is that the path is the correct one, thereby reducing the overhead of reading from memory and improving overall performance.
+%If the path is incorrect, the results of the execution are discarded, and execution resumes down the  correct  path.
+%Further,  to  help  prevent  against  malicious  actors from gaining control over an executing program, operating systems implement Address Space Layout Randomization  (ASLR),  resulting  in  the  address  space  positions  of  important data areas of a process being randomized.
+%Recently, a new attack, named Spectre, was discovered that exploits a flaw in many processor designs that enables the reading of arbitrary memory locations by measuring the change in state of the cache after a specific region of code has been speculatively executed.
+%This project builds off of these findings and shows that this flaw can be used by a malicious actor to get the  layout  of  a  program’s  address  space,  thereby  defeating  ASLR.
+%In doing so, one of many well-known attacks (e.g., Return  Oriented  Programming),  which  ASLR  is  meant  to  defend against, can be performed.The author hopes to further highlight the danger of this processor design flaw in that it can be used in new and unforeseen ways, in conjunction with other methods, to launch a successful attack.
+%\newline{}
+\newline}
+\cventry{Summer 2016}{Undergraduate Research Fellow}{Advisor: Jinyang Li}{New York, NY}{}{
+Implemented and evaluated a novel database storage structure to reduce the latency of accesses performed in parallel with database entry migration.
+\newline}
+\cventry{Summer 2015}{Undergraduate Research Fellow}{Advisor: Chee Yap}{New York, NY}{}{
+Designed and implemented a system for testing and visualizing Soft Subdivision Search algorithms in robotic motion planning.
+System was later presented in a publication entitled \textit{Path Planning for Simple Robots using Soft Subdivision Search} for which I was acknowledged.
+%Acknowledged in Hsu, Ching-Hsiang \& Ryan, John \& Yap, Chee. (2016). Path Planning for Simple Robots using Soft Subdivision Search. 10.4230/LIPIcs.SoCG.2016.68.
+\newline}
+
+\section{Industry Experience}
+\cventry{2018--2020}{Back-End Research \& Development Engineer}{Geopipe, Inc.}{New York, NY}{}{
+\begin{itemize}
+\item Managed and developed the generation of virtual model products--the Earth's digital twin.
+\item Implemented and tested research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's \textit{Small Business Innovation Research Program: Phase II} grant.
+\item Supervised the day-to-day work of undergraduate interns during the summers of 2018, 2019, and 2020.
+\end{itemize}
+The company has pentupled in size since joining and have earned a multi-million dollar evaluation.
+%\newline{}
+%Detailed achievements:
+%\begin{itemize}
+%\item Achievement 1
+%\item Achievement 2 (with sub-achievements)
+%  \begin{itemize}
+%  \item Sub-achievement (a);
+%  \item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+%    \begin{itemize}
+%    \item Sub-sub-achievement i;
+%    \item Sub-sub-achievement ii;
+%    \item Sub-sub-achievement iii;
+%    \end{itemize}
+%  \item Sub-achievement (c);
+%  \end{itemize}
+%\item Achievement 3
+%\item Achievement 4
+%\end{itemize}
+}
+\cventry{Summer 2017,\\Winter 2018}{Back-End Research \& Development Assistant}{Geopipe, Inc.}{New York, NY}{}{
+\begin{itemize}
+\item Managed and developed the generation of virtual model products.
+\item Assisted in the implementation and testing of research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's \textit{Small Business Innovation Research Program: Phase I} grant.
+\end{itemize}
+%\newline{}
+}
+
+\section{Teaching Experience}
+\cventry{Spring 2021}{Teaching Assistant -- CS456}{University of Waterloo}{Waterloo, ON}{}{evaluation: n/a}
+\cventry{Winter 2021}{Teaching Assistant -- CS116}{University of Waterloo}{Waterloo, ON}{}{evaluation: 30/30}
+\cventry{Summer 2018}{Private Tutor -- Linear Algebra and Computer Science}{}{New York, NY}{}{
+%Planned and led one-on-one tutoring sessions.\newline{}
+}
+
+\section{Awards}
+\cventry{2018}{Graduate Excellence Award in Computer Science}{}{}{}{
+UW Cheriton School of Computer Science}
+\cventry{2018}{Best in Panel Presentation Award: Computer Science, Mathematics for \textit{Ghosting ASLR: A Spectre Extension}}{}{}{}{
+NYU College of Arts and Science 44th Annual Research Conference}
+\cventry{2018}{Award for Scholarship: Academic Excellence \& Achievement in Science}{}{}{}{
+NYU College of Arts and Science}
+\cventry{2018}{Computer Science Prize: Outstanding Performance}{}{}{}{
+NYU College of Arts and Science}
+\cventry{2017}{Computer Science Prize: Most Promising Student in the Jr. Year}{}{}{}{
+NYU College of Arts and Science}
+\cventry{2017}{Dean’s Undergraduate Research Fund Award}{}{}{}{
+NYU College of Arts and Science}
+\cventry{2015--2018}{Louis Baron Scholarship Award for Mathematics}{}{}{}{
+NYU College of Arts and Science}
+\cventry{2014--2017}{Dean's List}{}{}{}{
+NYU College of Arts and Science}
+
+\section{Skills}
+\cvitem{PLs:}{C++ \cvskill{5} | C \cvskill{5} | Python \cvskill{4} | Bash \cvskill{4}}
+\cvitem{}{}
+\cvitem{OSes:}{Linux \cvskill{4} | MacOS \cvskill{4}}
+\cvitem{}{}
+\cvitem{Tools:}{GDB/LLDB \cvskill{5} | Git \cvskill{5}}
+\cvitem{}{}
+\cvitem{Languages:}{English \cvskill{5} | Korean \cvskill{1}}
+
+%\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
+%% Skill matrix as an alternative to rate one's skills, computer or other. 
+
+%% Adjusts width of skill matrix columns. 
+%% Usage \setcvskillcolumns[<width>][<factor>][<exp_width>]
+%% <width>, <exp_width> should be lengths smaller than \textwidth, <factor> needs to be between 0 and 1.
+%% Examples:
+% \setcvskillcolumns[5em][][]%    adjust first column. Same as \setcvskillcolumns[5em]
+% \setcvskillcolumns[][0.45][]%   adjust third (skill) column. Same as \setcvskillcolumns[][0.45]
+% \setcvskillcolumns[][][\widthof{``Year''}]%     adjust fourth (years) column.
+% \setcvskillcolumns[][0.45][\widthof{``Year''}]%
+% \setcvskillcolumns[\widthof{``Languag''}][0.48][]
+% \setcvskillcolumns[\widthof{``Languag''}]%
+
+%% Adjusts width of legend columns. Usage \setcvskilllegendcolumns[<width>][<factor>]
+%% <factor> needs to be between 0 and 1. <width> should be a length smaller than \textwidth
+%% Examples:
+% \setcvskilllegendcolumns[][0.45]
+% \setcvskilllegendcolumns[\widthof{``Legend''}][0.45]
+% \setcvskilllegendcolumns[0ex][0.46]% this is usefull for the banking style
+
+%% Add a legend if you are using \cvskill{<1-5>} command or \cvskillentry
+%% Usage \cvskilllegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \cvskilllegend % insert default legend without lines
+% \cvskilllegend*[1em]{}% adjust post spacing
+% \cvskilllegend*{Legend}%  Alternatively add a description string
+%% adjust the legend entries for other languages, here German
+% \cvskilllegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte\,/\,Spezialist]{Legende}
+
+%% Alternative legend style with the first three skill levels in one column
+%% Usage \cvskillplainlegend[*][<post_padding>][<first_level>][<second_level>][<third_level>][<fourth_level>][<fifth_level>]{<name>}
+% \setcvskilllegendcolumns[][0.6]%  works for classic, casual, banking
+% \setcvskilllegendcolumns[][0.55]%  works better for oldstyle and fancy
+% \cvskillplainlegend{}
+% \cvskillplainlegend[0.2em][Grundkenntnisse][Grundkenntnisse und eigene Erfahrung in Projekten][Umfangreiche Erfahrung in Projekten][Vertiefte Expertenkenntnisse][Experte/Guru]{Legende}
+
+%% Add a head of the skill matrix table with descriptions.
+%% Usage \cvskillhead[<post_padding>][<Level>][<Skill>][<Years>][<Comment>]%
+%\cvskillhead[-0.1em]
+%   this inserts the standard legend in english and adjust padding
+%% Adjust head of the skill matrix for other languages
+% \cvskillhead[0.25em][Level][F\"ahigkeit][Jahre][Bemerkung]
+
+%% \cvskillentry[*][<post_padding>]{<skill_cathegory>}{<0-5>}{<skill_name>}{<years_of_experience>}{<comment>}% 
+%% Example usages:
+%\cvskillentry*{}{5}{C++}{7}{}
+%\cvskillentry{}{5}{C}{6}{}
+%\cvskillentry{}{4}{Python}{5}{}
+%\cvskillentry{}{4}{Bash}{4}{}
+%\cvskillentry*{}{5}{English}{25}{}
+%\cvskillentry{}{1}{Korean}{1}{}
+%% \cvskill{<0-5>} command
+% \cvitem{\textbackslash{cvskill}:}{Skills can be visually expressed by the \textbackslash{cvskill} command, e.g. \cvskill{2}}
+
+%\section{Interests}
+%\cvitem{hobby 1}{Description}
+%\cvitem{hobby 2}{Description}
+%\cvitem{hobby 3}{Description}
+%
+%\section{Extra 1}
+%\cvlistitem{Item 1}
+%\cvlistitem{Item 2}
+%\cvlistitem{Item 3. This item is particularly long and therefore normally spans over several lines. Did you notice the indentation when the line wraps?}
+%
+%\section{Extra 2}
+%\cvlistdoubleitem{Item 1}{Item 4}
+%\cvlistdoubleitem{Item 2}{Item 5\cite{book2}}
+%\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+%
+%\section{References}
+%\begin{cvcolumns}
+%  \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+%  \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+%  \cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+%\end{cvcolumns}
+%
+%% Publications from a BibTeX file without multibib
+%%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+%
+%% Publications from a BibTeX file using the multibib package
+%%\section{Publications}
+%%\nocitebook{book1,book2}
+%%\bibliographystylebook{plain}
+%%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%%\nocitemisc{misc1,misc2,misc3}
+%%\bibliographystylemisc{plain}
+%%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+%
+%\clearpage
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
