@@ -27,15 +27,15 @@
 %\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
 % personal data
-\name{Bryant}{Curto}
-\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\name{}{\textbf{Bryant Curto}}
+%\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
 %\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
 %\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \homepage{www.bryantcurto.com}                         % optional, remove / comment the line if not wanted
 \email{bcurto@uwaterloo.ca}                               % optional, remove / comment the line if not wanted
 \phone[mobile]{+1~(437)~987-6897}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 % Social icons
-\social[linkedin][www.linkedin.com/in/bryant-curto-216907134/]{bryant-curto}                        % optional, remove / comment the line if not wanted
+\social[linkedin][www.linkedin.com/in/bryantcurto/]{bryantcurto}                        % optional, remove / comment the line if not wanted
 %\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
 \social[github]{bryantcurto}                              % optional, remove / comment the line if not wanted
 \social[gitlab][gitlab.uwaterloo.ca/bcurto]{bcurto}                              % optional, remove / comment the line if not wanted
@@ -48,7 +48,7 @@
 
 %\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
 %\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+%\quote{}                                 % optional, remove / comment the line if not wanted
 
 % bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
 %   to show numerical labels in the bibliography (default is to show no labels)
@@ -67,10 +67,15 @@
 %\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
+\vspace*{-10mm}
+
+\section{Research Interests}
+\cvitem{}{concurrent systems, distributed systems, operating systems, performance analysis, formal verification of concurrent and distributed algorithms.}
+%\textit{Concurrent Systems, Distributed Systems, Operating Systems, and Performance Analysis.}\newline{}
+%I'm interested in taking a first principles approach to designing and building concurrent and distributed systems informed by knowledge about underlying software and hardware.}
 
 \section{Education}
 \cventry{2020--present}{MS Computer Science}{University of Waterloo (UW)}{Waterloo, ON}{}{
-Supervisor: Martin Karsten\newline
 95.75/100.00 GPA}  % arguments 3 to 6 can be left empty
 \cventry{2014--2018}{BA Computer Science with Honors \& BA Mathematics}{New York University (NYU)}{New York, NY}{}{
 3.92/4.00 GPA, Summa Cum Laude, Phi Beta Kappa}
@@ -81,13 +86,18 @@ Supervisor: Martin Karsten\newline
 %\cvitem{description}{Short thesis abstract}
 
 \section{Research Experience}
-\cventry{2020--present}{UW Research Assistant}{Advisor: Martin Karsten}{Waterloo, ON}{}{
-Devise, implement, and evaluate methods for improving cache locality and utilization in thread-per-session applications using Fred/Libfibre, a user-level M:N threading runtime.
-\newline}
+\cventry{2020--present}{UW Graduate Research Assistant}{Advisor: Martin Karsten}{Waterloo, ON}{}{
+Develop an approach for improving cache locality in thread-per-session applications by moving computation around the cores of a system using Fred/Libfibre, a user-level M:N threading runtime.
+\begin{itemize}
+%improving cache locality in thread-per-session applications using Fred/Libfibre, a user-level M:N threading runtime, where computation is moved closer to the data it needs.
+\item Create a tool for characterizing the memory access behavior of an application.
+\item Evaluate methods for improving scalability and performance of the runtime.\newline{}
+%\item Created a microbenchmark to quantify the upper bound on performance benefits attainable using this method.
+\end{itemize}}
 \cventry{2017--2018}{NYU Senior Honors Thesis}{Advisor: Christopher Mitchell}{New York, NY}{}{
 Project Title: Ghosting ASLR: A Spectre Extension\newline
 Designed, implemented, and evaluated a novel approach for defeating address space layout randomization by leveraging the Spectre microprocessor vulnerability.
-Won best presentation award at NYU College of Arts and Science 44th Undergraduate Research Conference.
+Won best presentation award at NYU College of Arts and Science's 44th Undergraduate Research Conference.
 %Modern  computer  processors  implement  optimizations known as branch prediction and speculative execution.
 %If a processor is waiting to retrieve a value from memory to determine  which  branch  of  code  to  execute,  these  features  enable the processor to predict the code path and begin executing.
 %The hope is that the path is the correct one, thereby reducing the overhead of reading from memory and improving overall performance.
@@ -103,18 +113,19 @@ Implemented and evaluated a novel database storage structure to reduce the laten
 \newline}
 \cventry{Summer 2015}{Undergraduate Research Fellow}{Advisor: Chee Yap}{New York, NY}{}{
 Designed and implemented a system for testing and visualizing Soft Subdivision Search algorithms in robotic motion planning.
-System was later presented in a publication entitled \textit{Path Planning for Simple Robots using Soft Subdivision Search} for which I was acknowledged.
+System was presented in a publication entitled \textit{Path Planning for Simple Robots using Soft Subdivision Search} for which I was acknowledged.
 %Acknowledged in Hsu, Ching-Hsiang \& Ryan, John \& Yap, Chee. (2016). Path Planning for Simple Robots using Soft Subdivision Search. 10.4230/LIPIcs.SoCG.2016.68.
 \newline}
 
 \section{Industry Experience}
 \cventry{2018--2020}{Back-End Research \& Development Engineer}{Geopipe, Inc.}{New York, NY}{}{
 \begin{itemize}
-\item Managed and developed the generation of virtual model products--the Earth's digital twin.
-\item Implemented and tested research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's \textit{Small Business Innovation Research Program: Phase II} grant.
-\item Supervised the day-to-day work of undergraduate interns during the summers of 2018, 2019, and 2020.
+\item Managed and developed the generation of virtual model products.
+\item Implemented and tested research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's SBIR: Phase II grant.
+\item Submitted paper to the European Conference on Computer Vision 2020.
+\item Supervised the day-to-day work of undergraduate interns.
+%\item Contributed to the company pentupling in size and earning a multi-million dollar evaluation.\newline{}
 \end{itemize}
-The company has pentupled in size since joining and have earned a multi-million dollar evaluation.
 %\newline{}
 %Detailed achievements:
 %\begin{itemize}
@@ -137,20 +148,18 @@ The company has pentupled in size since joining and have earned a multi-million 
 \cventry{Summer 2017,\\Winter 2018}{Back-End Research \& Development Assistant}{Geopipe, Inc.}{New York, NY}{}{
 \begin{itemize}
 \item Managed and developed the generation of virtual model products.
-\item Assisted in the implementation and testing of research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's \textit{Small Business Innovation Research Program: Phase I} grant.
-\end{itemize}
-%\newline{}
+\item Assisted in the implementation and testing of research algorithms to improve the quality and accuracy of product models. Work was funded by the National Science Foundation's SBIR: Phase I grant.
+\end{itemize}%\newline{}
 }
 
 \section{Teaching Experience}
-\cventry{Spring 2021}{Teaching Assistant -- CS456}{University of Waterloo}{Waterloo, ON}{}{evaluation: n/a}
-\cventry{Winter 2021}{Teaching Assistant -- CS116}{University of Waterloo}{Waterloo, ON}{}{evaluation: 30/30}
-\cventry{Summer 2018}{Private Tutor -- Linear Algebra and Computer Science}{}{New York, NY}{}{
-%Planned and led one-on-one tutoring sessions.\newline{}
+\cventry{Spring 2021}{Teaching Assistant -- CS456 Computer Networks}{University of Waterloo}{}{}{}
+\cventry{Winter 2021}{Teaching Assistant -- CS116 Introduction to CS 2}{University of Waterloo}{}{}{Evaluation: 30/30}
+\cventry{Summer 2018}{Private Tutor -- Linear Algebra and Computer Science}{}{New York, NY}{}{%Planned and led one-on-one tutoring sessions.\newline{}
 }
 
 \section{Awards}
-\cventry{2018}{Graduate Excellence Award in Computer Science}{}{}{}{
+\cventry{2020--present}{Graduate Excellence Award in Computer Science}{}{}{}{
 UW Cheriton School of Computer Science}
 \cventry{2018}{Best in Panel Presentation Award: Computer Science, Mathematics for \textit{Ghosting ASLR: A Spectre Extension}}{}{}{}{
 NYU College of Arts and Science 44th Annual Research Conference}
@@ -158,7 +167,7 @@ NYU College of Arts and Science 44th Annual Research Conference}
 NYU College of Arts and Science}
 \cventry{2018}{Computer Science Prize: Outstanding Performance}{}{}{}{
 NYU College of Arts and Science}
-\cventry{2017}{Computer Science Prize: Most Promising Student in the Jr. Year}{}{}{}{
+\cventry{2017}{Computer Science Prize: Most Promising Student in the Junior Year}{}{}{}{
 NYU College of Arts and Science}
 \cventry{2017}{Dean’s Undergraduate Research Fund Award}{}{}{}{
 NYU College of Arts and Science}
@@ -167,14 +176,24 @@ NYU College of Arts and Science}
 \cventry{2014--2017}{Dean's List}{}{}{}{
 NYU College of Arts and Science}
 
+%\subsection{UW Cheriton School of Computer Science}
+%\cventry{2018}{Graduate Excellence Award in Computer Science}{}{}{}{}
+%\subsection{NYU College of Arts and Science}
+%\cventry{2018}{Best in Panel Presentation Award: Computer Science, Mathematics for \textit{Ghosting ASLR: A Spectre Extension}}{}{}{}{
+%NYU College of Arts and Science 44th Annual Research Conference}
+%\cventry{2018}{Award for Scholarship: Academic Excellence \& Achievement in Science}{}{}{}{}
+%\cventry{2018}{Computer Science Prize: Outstanding Performance}{}{}{}{}
+%\cventry{2017}{Computer Science Prize: Most Promising Student in the Jr. Year}{}{}{}{}
+%\cventry{2017}{Dean’s Undergraduate Research Fund Award}{}{}{}{}
+%\cventry{2015--2018}{Louis Baron Scholarship Award for Mathematics}{}{}{}{}
+%\cventry{2014--2017}{Dean's List}{}{}{}{}
+
 \section{Skills}
-\cvitem{PLs:}{C++ \cvskill{5} | C \cvskill{5} | Python \cvskill{4} | Bash \cvskill{4}}
-\cvitem{}{}
-\cvitem{OSes:}{Linux \cvskill{4} | MacOS \cvskill{4}}
-\cvitem{}{}
-\cvitem{Tools:}{GDB/LLDB \cvskill{5} | Git \cvskill{5}}
-\cvitem{}{}
-\cvitem{Languages:}{English \cvskill{5} | Korean \cvskill{1}}
+\cvitem{PLs:}{C++, C, Python, Bash}
+\vspace{2mm}
+\cvitem{OSes:}{Linux, MacOS}
+\vspace{2mm}
+\cvitem{Tools:}{Git, Vim, GDB/LLDB, Perf, gnuplot}
 
 %\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
 %% Skill matrix as an alternative to rate one's skills, computer or other. 
