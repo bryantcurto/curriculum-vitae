@@ -17,6 +17,9 @@
 % \renewcommand*{\gitlabsocialsymbol}{{\scriptsize\faGitlab}~}
 %%%%%%
 
+\usepackage[backend=biber,style=authoryear,refsection=section,maxbibnames=99,maxcitenames=99]{biblatex}
+\addbibresource{cv.bib}
+
 % character encoding
 %\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
 %\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
@@ -70,7 +73,7 @@
 \vspace*{-13mm}
 
 \section{Research Interests}
-\cvitem{}{formal verification, concurrent and distributed systems, operating systems}
+\cvitem{}{formal verification of concurrent and distributed systems}
 %\textit{Concurrent Systems, Distributed Systems, Operating Systems, and Performance Analysis.}\newline{}
 %I'm interested in taking a first principles approach to designing and building concurrent and distributed systems informed by knowledge about underlying software and hardware.}
 
@@ -89,7 +92,7 @@
 
 \section{Research Experience}
 \cventry{2022--present}{NU PhD Research Assistant}{Advisor: Ji-Yong Shin}{}{}{
-Developing a unified framework that makes practical the formal verification of safety and liveness properties of protocols and implementations of distributed systems exhibiting weak consistency semantics.
+Developing a top-down verification framework for weakly consistent distributed systems, with the aim of reducing the effort needed to verify this commonly overlooked class of safety-critical systems.
 %\vspace*{2mm}
 }
 \cventry{2020--2022}{UW Master's Research Assistant}{Advisor: Martin Karsten}{}{}{
@@ -123,6 +126,7 @@ System was presented in a publication entitled \textit{Path Planning for Simple 
 }
 
 \section{Awards}
+\cventry{2023}{OSDI '23 Student Grant}{USENIX}{}{}{}
 \cventry{2020--2022}{Graduate Excellence Award in CS}{UW CS}{}{}{}
 \cventry{2020}{Graduate Scholarship}{UW CS}{}{}{}
 \cventry{2018}{Best in Panel Presentation: CS, Math}{NYU CAS 44th Annual Research Conference}{}{}{}
@@ -136,6 +140,7 @@ System was presented in a publication entitled \textit{Path Planning for Simple 
 \cventry{2014--2017}{Dean's List}{NYU CAS}{}{}{}
 
 \section{Teaching Experience}
+\cventry{Fall 2024 \&\newline{}Spring 2025}{\vspace*{-0.5mm}CS5600 Computer Systems Teaching Assistant}{NU}{}{}{}
 \cventry{Spring \&\newline{}Fall 2021}{\vspace*{-0.5mm}CS456 Computer Networks Teaching Assistant}{UW}{}{}{}
 \cventry{Winter 2021}{CS116 Introduction to CS 2 Teaching Assistant}{UW}{}{}{}
 \cventry{Summer 2018}{Linear Algebra and Computer Science Tutor}{}{New York}{NY}{}
@@ -176,6 +181,8 @@ System was presented in a publication entitled \textit{Path Planning for Simple 
 }
 
 \section{Presentations}
+\cventry{2025}{New England Systems Day}{}{}{}{
+Verifying safety and liveness of compositions of weakly consistent distributed systems}
 \cventry{2024}{New England Systems Verification Day}{}{}{}{
 Verifying safety and liveness of compositions of weakly consistent distributed systems}
 \cventry{2024}{NU Systems Day}{}{}{}{
@@ -201,10 +208,13 @@ Ghosting ASLR: A Spectre Extension}
 %\cventry{2015--2018}{Louis Baron Scholarship Award for Mathematics}{}{}{}{}
 %\cventry{2014--2017}{Dean's List}{}{}{}{}
 
+\renewcommand{\refname}{Publications}
+\nocite{*}
+\printbibliography[keyword={publication}]
+
 \renewcommand{\refname}{Patents}
 \nocite{*}
-\bibliographystyle{plain}
-\bibliography{patents}
+\printbibliography[keyword={patent}]
 
 %\cvitem{Skill matrix}{Alternatively, provide a skill matrix to show off your skills}
 %% Skill matrix as an alternative to rate one's skills, computer or other. 
@@ -302,9 +312,8 @@ Ghosting ASLR: A Spectre Extension}
 
 %\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
 
-\pagebreak
 \section{Skills}
-\cvitem{PLs:}{Coq, C++, C, Python, Bash}
+\cvitem{PLs:}{Rocq (Coq), C++, C, Python, Bash}
 \cvitem{OSes:}{Linux, MacOS}
 \cvitem{Tools:}{Vim, Perf, Git, GDB/LLDB, gnuplot, \LaTeX}
 
