@@ -7,6 +7,13 @@
   note={US Patent App. 17/909,119},
   keywords={patent}
 }
+@mastersthesis{curto2023improving,
+  title={Improving Data Locality in Applications through Execution Delegation},
+  author={\textbf{Curto}, \textbf{Bryant J}},
+  year={2023},
+  school={University of Waterloo},
+  keywords={publication}
+}
 @inproceedings{xiong2025recraft,
   title={ReCraft: Self-Contained Split, Merge, and Membership Change of Raft Protocol},
   author={Xiong, Kezhi and Moon, Soonwon and Kang, Joshua H and \textbf{Curto}, \textbf{Bryant} and Kim, Jieung and Shin, Ji-Yong},
@@ -15,4 +22,21 @@
   year={2025},
   organization={IEEE},
   keywords={publication}
+}
+@inproceedings{plos_2025,
+author = {\textbf{Curto}, \textbf{Bryant J.} and Kim, Jeonghyeon and Wang, Alan and Im, Gijung and Kim, Jieung and Kang, Jeehoon and Shin, Ji-Yong},
+title = {Compositional Model-Driven Verification of Weakly Consistent Distributed Systems},
+year = {2025},
+isbn = {9798400722257},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3764860.3768331},
+doi = {10.1145/3764860.3768331},
+abstract = {Despite abundant distributed system verification work, weakly consistent distributed systems have been overlooked as formal verification targets. Verification methodologies starting from the code level face scalability challenges when verifying weakly consistent distributed systems as these systems employ a wide variety of similar semantics and designs, potentially leading to redundant verification work.This paper presents our ongoing work to develop Moveri, a top-down verification framework for weakly consistent distributed systems. It aims to reduce the effort needed to verify this commonly overlooked class of safety-critical systems. Moveri is based on novel compositional and operational models of sixteen different consistency semantics including eventual consistency, four session guarantees, and causal consistency. The implementation-agnostic semantic models connect to templated distributed protocol models and further to different verified implementations through refinement.Verification of the safety of weakly consistent distributed system protocols and implementations is made more practical by the flexibility of our templated distributed protocol models. Further, the compositionality of these semantic models and templating of these protocol models enable the framework to efficiently scale to support a range of weak consistency semantics. These claims are evaluated through verification of primary-replica and gossip style protocol implementations configurable to any of six different consistency semantics.},
+booktitle = {Proceedings of the 13th Workshop on Programming Languages and Operating Systems},
+pages = {42–50},
+numpages = {9},
+keywords = {publication,Coq, Rocq, bisimulation, consistency semantics, formal verification, refinement},
+location = {Seoul, Republic of Korea},
+series = {PLOS '25}
 }
