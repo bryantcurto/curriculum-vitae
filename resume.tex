@@ -1,0 +1,137 @@
+% Adapted from template.tex provided with moderncv
+% NOTE: Check back there for interesting/useful formatting tools.
+
+
+\documentclass[11pt,letterpaper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\PassOptionsToPackage{details}{moderncvheadii}     % print contact details under the name (casual style otherwise puts them in the footer)
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{burgundy}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\renewcommand*{\makecvfoot}{}                      % contact details are in the header, so keep them out of the footer
+\newcommand*{\tbd}[1]{\textcolor{red}{[#1]}}       % unconfirmed detail; resolve all before sending
+\renewcommand*{\recomputecvheadlengths}{%          % wrap the contact details two per line
+  \setlength{\makeheaddetailswidth}{0.7\textwidth}%
+  \setlength{\quotewidth}{0.65\textwidth}}
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+%%%%%%
+% % Fix issue of Gitlab favicon not showing up
+% % https://tex.stackexchange.com/a/559417
+% \usepackage{fontawesome}
+% \providecommand*{\gitlabsocialsymbol}{}
+% \renewcommand*{\gitlabsocialsymbol}{{\scriptsize\faGitlab}~}
+%%%%%%
+
+\newcommand{\mytilde}{\hbox{$\scriptstyle\mathtt{\sim}$}}
+
+\usepackage[backend=biber,style=authoryear,refsection=section,maxbibnames=99,maxcitenames=99,sorting=ydnt,doi=false,isbn=false,url=false]{biblatex}
+\addbibresource{cv.bib}
+% keep resume bibliography entries compact
+\AtEveryBibitem{\clearlist{publisher}\clearlist{location}\clearlist{organization}\clearfield{pages}}
+\setlength{\bibitemsep}{0.5em}                     % space between bibliography entries
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{needspace}                             % keep an entry's title lines with its bullets across page breaks
+\setlength{\hintscolumnwidth}{2.27cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{}{\textbf{Bryant J. Curto}}
+%\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+%\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\homepage{www.bryantcurto.com}                         % optional, remove / comment the line if not wanted
+\email{curto.b@northeastern.edu}                               % optional, remove / comment the line if not wanted
+% \phone[mobile]{+1~(617)~991-8397}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% Social icons (URLs spelled out, since readers may not recognize the icons)
+\social[github][github.com/bryantcurto]{github.com/bryantcurto}                              % optional, remove / comment the line if not wanted
+\social[linkedin][www.linkedin.com/in/bryantcurto]{linkedin.com/in/bryantcurto}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+% \social[gitlab][gitlab.uwaterloo.ca/bcurto]{bcurto}                              % optional, remove / comment the line if not wanted
+%\social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
+%\social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
+%\social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
+%\social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
+
+
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{}                                 % optional, remove / comment the line if not wanted
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-13mm}
+
+\section{Summary}
+\cvitem{}{PhD student building machine-checked correctness proofs for distributed systems in Rocq (formerly Coq), including proofs about Go implementations.
+Previously a back-end R\&D engineer at Geopipe, Inc. (2018--2020), building its C++ pipeline for 3D city models.}
+
+\section{Education}
+\cventry{2022--present}{PhD in Computer Science}{Northeastern University}{Boston, MA}{}{
+Expected graduation: Spring 2028; 4.0/4.0 GPA}
+\cventry{2020--2022}{MMath in Computer Science}{University of Waterloo}{Waterloo, ON}{}{
+95.75/100.00 GPA}
+\cventry{2014--2018}{BA CS with Honors \& BA Math}{New York University}{New York, NY}{}{
+3.921/4.000 GPA; Summa Cum Laude; Phi Beta Kappa}
+
+\section{Experience}
+\cventry{2022--present}{PhD Research Assistant}{Northeastern University}{Boston, MA}{}{
+\begin{itemize}
+\item Lead developer of \textbf{Mosaic} (\httpslink{github.com/bryantcurto/consistency-semantics}), a Rocq framework that verifies the \textbf{safety} (nothing bad happens) and \textbf{liveness} (something good eventually happens) of weakly consistent replicated storage system \textbf{Go implementations} (reads can return stale data) and of applications composing them. Mosaic extends Moveri (PLOS '25) beyond safety.
+\item Designed and implemented consistency models and safety reasoning around the key insight that consistency semantics form a partial order by strength, where stronger semantics compose from weaker ones (e.g., causal from the session guarantees). Compositional models of \textbf{16 consistency semantics} (e.g., eventual, PRAM) turn this into systematic proof reuse: each added semantics requires, on average, only \textbf{13.7\% additional effort} (lines of spec and proof).
+\item Designed and directed the implementation of \textbf{liveness reasoning}---convergence (replicas progress towards storing the same state) and availability (each client eventually receives a response)---in linear temporal logic (LTL).
+\item Implemented and verified \textbf{three replicated storage systems in Go} with drastically different architectures (MOStore, Eiger, Causal Memory), and a \textbf{social media application} composing heterogeneous storage systems (\tbd{N} lines of Go; \tbd{N} lines of Rocq), with Claude writing the separation-logic (Iris) proofs. MOStore performs comparably to unverified Redis and achieves \textbf{21\hspace{-0.1em}$\times$\hspace{0.2em}the throughput} of verified Chapar.
+\item Uncovered implementation bugs violating safety and liveness (e.g., replicas misidentifying themselves and violating convergence), and hurting performance.
+\end{itemize}}
+\cventry{2020--2022}{Master's Research Assistant}{University of Waterloo}{Waterloo, ON}{}{
+\textit{Thesis: Improving Data Locality in Applications through Execution Delegation}
+\begin{itemize}
+\item Built Accessprof, a profiling tool that predicts whether delegating a function's execution to another CPU core (via user-thread migration) improves data locality, by characterizing the application's working sets from memory accesses sampled with Linux perf. On the Apache HTTP server, it correctly predicted the effect for 3 of 4 system calls, and delegation improved throughput by up to \textbf{11\%}.
+\end{itemize}}
+\needspace{4\baselineskip}
+\cventry[0em]{2018--2020}{Back-End R\&D Engineer}{Geopipe, Inc.}{New York, NY}{}{}
+\cventry{Summer 2017\newline{}Spring 2018}{Back-End R\&D Assistant}{}{}{}{
+\begin{itemize}
+\item Built the pipeline behind Geopipe's high-accuracy 3D city models (e.g., New York City, Boston), generated from LIDAR, satellite imagery, and OpenStreetMap data and licensed to game, simulation, and architecture customers; the company was later acquired by NBCUniversal.
+\item Wrote \textbf{\mytilde{}200K lines} of its core in C++: ingesting raw input data; procedurally generating buildings, terrain, and decorations (e.g., windows); and fixing bugs.
+\item Provisioned and managed the AWS and Google Cloud servers that ran the pipeline to model new areas and update existing ones.
+\item Prototyped ML methods that predict model details (e.g., building shape, color, decoration) from raw input data (NSF SBIR-funded R\&D).
+\item \textbf{First inventor} on a U.S. patent application for inferring objects from aerial imagery.
+\item Led 8 co-op interns, assigning and reviewing their work.
+\end{itemize}}
+\cventry{2016--2018}{Undergraduate Researcher}{New York University}{New York, NY}{}{
+\begin{itemize}
+\item Showed how Spectre, a CPU flaw that leaks memory through cache side effects of speculative execution, can reveal a program's address-space layout, defeating address space layout randomization (ASLR) and re-enabling the attacks it defends against (e.g., return-oriented programming); senior honors thesis, \textit{Ghosting ASLR: A Spectre Extension}.
+\item Implemented and evaluated a new database storage structure to reduce the latency of accesses that run concurrently with database entry migration; Courant Undergraduate Research Fellow.
+\end{itemize}}
+
+\renewcommand{\refname}{Peer-Reviewed Publications}
+\nocite{*}
+\printbibliography[keyword={publication},nottype={thesis}]  % the master's thesis is listed under Education
+
+\renewcommand{\refname}{Patents}
+\nocite{*}
+\printbibliography[keyword={patent}]
+
+\section{Skills}
+\cvitem{Languages:}{Rocq (Coq), Go, Python, C++, C, Bash}
+\cvitem{Verification:}{Interactive theorem proving (Rocq); state machine refinement; safety; liveness; labeled transition system (LTS); linear temporal logic (LTL); compositional verification}
+\cvitem{Tools:}{Linux, Git, perf, GDB/LLDB, Goose, AI-assisted verification (Claude)}
+
+\section{Additional}
+\cvitem{Talks:}{PLOS '25 (Seoul); New England Systems Verification Day ('24, '25); New England Systems Day ('25, '26)}
+\cvitem{Teaching:}{TA for Computer Systems (Northeastern, 2 semesters), Computer Networks (Waterloo, 2 terms), and Intro to CS 2 (Waterloo)}
+
+\end{document}
